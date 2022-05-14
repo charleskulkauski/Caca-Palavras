@@ -1,363 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palavras cruzadas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;1,100;1,200;1,300&display=swap"
+        rel="stylesheet">
     <script src="Script.js"></script>
+    <link rel="icon" type="image/png" href="./img/palavras-cruzadas.png">
 </head>
+
 <body>
-        <div class="header">
-            <span>Palavras cruzadas</span>
+    <div class="header">
+        <span>Palavras cruzadas</span>
+    </div>
+    <div id="modal">
+            <h1>Bem vindo!</h1>
+            <br>
+            <p>Olá, seja bem vindo ao jogo de palavras cruzadas, as palavras que você tem que deduzir são relacionados ao hardware de um computador, leia as dicas e tente adivinhar! Boa diversão.
+            </p>
+            <button onclick="iniciar()">Iniciar o Jogo!</button>
         </div>
-        <div class="body">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>⁴</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>¹⁰</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>⁶</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_p" onkeyup="array_p_p()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_o" onkeyup="array_p_o()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup=array_p_m()></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_c" onkeyup="array_p_c()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>                        
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td></td>
-                        <td>⁷</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_h" onkeyup="array_p_h()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>⁵</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup=array_p_m()></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" id="input_f" onkeyup="if_p_id_f()"></td>
-                        <td></td>
-                        <td></td>
-                        <td>¹⁴</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_i" onkeyup="array_p_i()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" id="input_7" onkeyup="if_p_id_7()"></td>
-                        <td></td>
-                        <td></td>
-                        <td>³</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_o" onkeyup="array_p_o()"></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_l" onkeyup="array_p_l()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_p" onkeyup="array_p_p()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>⁸</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_o" onkeyup="array_p_o()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_i" onkeyup="array_p_i()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_i" onkeyup="array_p_i()"></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" id="input_g" onkeyup="if_p_id_g()"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_o" onkeyup="array_p_o()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_h" onkeyup="array_p_h()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_l" onkeyup="array_p_l()"></td>
-                        <td></td>
-                        <td></td>
-                        <td>¹³</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_i" onkeyup="array_p_i()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" id="input_5" onkeyup="if_p_id_5()"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_i" onkeyup="array_p_i()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_c" onkeyup="array_p_c()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_t" onkeyup="array_p_t()"></td>
-                        <td></td>
-                       </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td>⁹</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_d" onkeyup="array_p_d()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_t" onkeyup="array_p_t()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td></td>
-                        </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td></td>
-                       </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_o" onkeyup="array_p_o()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_u" onkeyup="array_p_u()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_b" onkeyup="array_p_b()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_t" onkeyup="array_p_t()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_d" onkeyup="array_p_d()"></td>
-                        <td>¹²</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_m" onkeyup="array_p_m()"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_l" onkeyup="array_p_l()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_o" onkeyup="array_p_o()"></td>
-                        <td></td>
-                        </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>¹</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_c" onkeyup="array_p_c()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_p" onkeyup="array_p_p()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_u" onkeyup="array_p_u()"></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td></td>
-                        </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>²</td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td></td>
-                       </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>¹¹</td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_a" onkeyup="array_p_a()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_d" onkeyup="array_p_d()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_d" onkeyup="array_p_d()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_r" onkeyup="array_p_r()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_e" onkeyup="array_p_e()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_b" onkeyup="array_p_b()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_u" onkeyup="array_p_u()"></td>
-                        <td><input type="text" maxlength = "1" style="text-transform:uppercase" class="input_s" onkeyup="array_p_s()"></td>
-                        <td></td>
-                        </tr>
-                </table>
-                <div class="informacoes">
-                    <div class="container1">
-                        1-
-                        2-
-                        3-
-                        4-
-                        5-
-                        6-
-                        7-
-                    </div>
-                    <div class="container2">
-                        8-
-                        9-
-                        10-
-                        11-
-                        12-
-                        13-
-                        14-
-                    </div>
-                </div>
+    <div class="container">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>⁴</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>¹⁰</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>⁶</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_p"
+                        onkeyup="array_p_p()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_o"
+                        onkeyup="array_p_o()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup=array_p_m()></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_c"
+                        onkeyup="array_p_c()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td></td>
+                <td>⁷</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_h"
+                        onkeyup="array_p_h()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>⁵</td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup=array_p_m()></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" id="input_f"
+                        onkeyup="if_p_id_f()"></td>
+                <td></td>
+                <td></td>
+                <td>¹⁴</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_i"
+                        onkeyup="array_p_i()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" id="input_7"
+                        onkeyup="if_p_id_7()"></td>
+                <td></td>
+                <td></td>
+                <td>³</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_o"
+                        onkeyup="array_p_o()"></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_l"
+                        onkeyup="array_p_l()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_p"
+                        onkeyup="array_p_p()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>⁸</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_o"
+                        onkeyup="array_p_o()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_i"
+                        onkeyup="array_p_i()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_i"
+                        onkeyup="array_p_i()"></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" id="input_g"
+                        onkeyup="if_p_id_g()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_o"
+                        onkeyup="array_p_o()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_h"
+                        onkeyup="array_p_h()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_l"
+                        onkeyup="array_p_l()"></td>
+                <td></td>
+                <td></td>
+                <td>¹³</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_i"
+                        onkeyup="array_p_i()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" id="input_5"
+                        onkeyup="if_p_id_5()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_i"
+                        onkeyup="array_p_i()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_c"
+                        onkeyup="array_p_c()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_t"
+                        onkeyup="array_p_t()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td>⁹</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_d"
+                        onkeyup="array_p_d()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_t"
+                        onkeyup="array_p_t()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_o"
+                        onkeyup="array_p_o()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_u"
+                        onkeyup="array_p_u()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_b"
+                        onkeyup="array_p_b()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_t"
+                        onkeyup="array_p_t()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_d"
+                        onkeyup="array_p_d()"></td>
+                <td>¹²</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_m"
+                        onkeyup="array_p_m()"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_l"
+                        onkeyup="array_p_l()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_o"
+                        onkeyup="array_p_o()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>¹</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_c"
+                        onkeyup="array_p_c()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_p"
+                        onkeyup="array_p_p()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_u"
+                        onkeyup="array_p_u()"></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>²</td>
+                <td></td>
+                <td></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>¹¹</td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_a"
+                        onkeyup="array_p_a()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_d"
+                        onkeyup="array_p_d()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_d"
+                        onkeyup="array_p_d()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_r"
+                        onkeyup="array_p_r()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_e"
+                        onkeyup="array_p_e()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_b"
+                        onkeyup="array_p_b()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_u"
+                        onkeyup="array_p_u()"></td>
+                <td><input type="text" maxlength="1" style="text-transform:uppercase" class="input_s"
+                        onkeyup="array_p_s()"></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="informacoes">
+            <div class="container1">
+                <span><b>1 - Si</b>gla do processamento central de um computador. </span>
+                <!--CPU-->
+                <br>
+                <span><b>2</b> - Processamento de dados lógicos e aritméticos.</span>
+                <!--ULA-->
+                <br>
+                <span><b>3</b> - Armazena a quantidade de bits.</span>
+                <!--Registradores-->
+                <br>
+                <span><b>4</b> - Serve para armazenar temporiamente os dados dos softwares.</span>
+                <!--RAM-->
+                <br>
+                <span><b>5</b> - Armazena dados que não podem ser apagados ou alterados.</span>
+                <!--ROM-->
+                <br>
+                <span><b>6</b> - Mantém dados salvos quando a energia é desligada inesperadamente.</span>
+                <!--EPROM-->
+                <br>
+                7 - Permite que diversos endereços sejam apagados ou escritos numa só operação.</span>
+                <!--Flash-->
+            </div>
+            <div class="container2">
+                <span><b>8 - Ar</b>mazena grande quantidade de dados que são mantidos após o desligamento da maquina.</span>
+                <!--Memoria de Massa-->
+                <br>
+                <span><b>9</b> - Utilizado em computadores modernos transferindos dados sem acessar a unidade central de
+                    processamento.</span>
+                <!--DMA-->
+                <br>
+                <span><b>10</b> - linha de contraste usada para selecionar uma (ou um conjunto) de circuitos.</span>
+                integrados dentre vários conectadas ao mesmo Barramento de computador.</span>
+                <!--Chip Select-->
+                <br>
+                <span><b>11</b> - Indica para onde os processos devem ser extraídos e enviados.</span>
+                <!--Adress Bus-->
+                <br>
+                <span><b>12</b> - Onde ocorre os traços de dados do computador (enviados e recebidos).</span>
+                <!--Data bus-->
+                <br>
+                <span><b>13</b> - Processodor de 5ª Geração da Intel.</span>
+                <!--i5-->
+                <br>
+                <span><b>14</b> - Processodor de 7ª Geração da Intel.</span>
+                <!--i7-->
+                <br>
+            </div>
         </div>
+    </div>
 </body>
+
 </html>
